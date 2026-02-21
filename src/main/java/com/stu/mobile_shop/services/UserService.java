@@ -29,4 +29,13 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public User getUserbyID(Long id){
+        User user = userRepository.findById(id)
+        .orElseThrow(()->new RuntimeException("User not found"));
+        return user;
+    }
+    public void deleteUserById(Long id) {
+    userRepository.deleteById(id);
+}
+
 }

@@ -44,9 +44,13 @@
                                             <td>${user.fullName}</td>
                                             <td>${user.phone}</td>
                                             <td>
-                                                <button class="btn btn-success">View</button>
-                                                <button class="btn btn-warning">Update</button>
-                                                <button class="btn btn-danger">Deltete</button>
+                                                <a href="/admin/user/${user.id}" class="btn btn-success">View</a>
+                                                <a href="/admin/user/update/${user.id}"
+                                                    class="btn btn-warning">Update</a>
+                                                <a href="/admin/user/delete/${user.id}" class="btn btn-danger"
+                                                    onclick="return confirm('Are you sure you want to delete this user?')">
+                                                    Delete
+                                                </a>
                                             </td>
                                         </tr>
                                     </c:forEach>
